@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const app = express();
 
 // CORS configuration
@@ -12,8 +13,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(express.json());
 
+// Serve static files from the admin dashboard
+app.use(express.static(path.join(__dirname, 'public')));
+
+// API Routes
 // Health check endpoint
-app.get('/', (req, res) => {
+app.get('/api', (req, res) => {
   res.json({ status: 'ok', message: 'Kuriftu API is running' });
 });
 
@@ -80,6 +85,11 @@ app.delete('/api/users/:id', (req, res) => {
   
   const deletedUser = users.splice(index, 1)[0];
   res.json(deletedUser);
+});
+
+// Serve the admin dashboard for any other route
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
