@@ -10,7 +10,7 @@
     "build:render": "mkdir -p public && cp -r ../kuriftu_admin/out/* public/ || true"
   },
   "engines": {
-    "node": "16.x"
+    "node": "18.x"
   },
   "repository": {
     "type": "git",
