@@ -22,7 +22,6 @@ const AdminSidebar = () => {
     { icon: Users, label: "User Management", path: "/users" },
     { icon: MessageSquare, label: "Review Analysis", path: "/reviews" },
     { icon: Award, label: "Membership Tiers", path: "/membership-tiers" },
-    { icon: Coins, label: "Loyalty Coins", path: "/loyalty-coins" },
     { icon: Tag, label: "Discounts & Offers", path: "/discounts" },
     { icon: MessageCircle, label: "Feedback", path: "/feedback" },
     { icon: Settings, label: "Settings", path: "/settings" },
