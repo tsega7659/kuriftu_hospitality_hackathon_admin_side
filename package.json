@@ -1,0 +1,24 @@
+{
+  "name": "kuriftu-hospitality-admin",
+  "version": "1.0.0",
+  "description": "Kuriftu Hospitality Admin Dashboard",
+  "main": "kuriftu_backend/server.js",
+  "scripts": {
+    "start": "node kuriftu_backend/server.js",
+    "install": "cd kuriftu_backend && npm install"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsega7659/kuriftu_hospitality_hackathon_admin_side.git"
+  },
+  "keywords": [
+    "kuriftu",
+    "hospitality",
+    "admin"
+  ],
+  "author": "",
+  "license": "ISC"
+}
