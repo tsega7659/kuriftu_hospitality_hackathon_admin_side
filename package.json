@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "nodemon server.js",
-    "build": "if not exist public mkdir public && xcopy /E /I /Y \"..\\kuriftu_admin\\out\\*\" \"public\\\"",
+    "build": "mkdir -p public && cp -r ../kuriftu_admin/out/* public/",
     "build:render": "mkdir -p public && cp -r ../kuriftu_admin/out/* public/ || true"
   },
   "engines": {
