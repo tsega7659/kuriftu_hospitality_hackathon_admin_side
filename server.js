@@ -5,16 +5,13 @@ const app = express();
 
 // CORS configuration
 const corsOptions = {
-  origin: process.env.FRONTEND_URL || 'http://localhost:3000',
+  origin: '*', // Allow all origins for testing
   optionsSuccessStatus: 200
 };
 
 // Middleware
 app.use(cors(corsOptions));
 app.use(express.json());
-
-// Serve static files from the admin dashboard
-app.use(express.static(path.join(__dirname, 'public')));
 
 // API Routes
 // Health check endpoint
@@ -86,6 +83,10 @@ app.delete('/api/users/:id', (req, res) => {
   const deletedUser = users.splice(index, 1)[0];
   res.json(deletedUser);
 });
+
+// Serve static files from the admin dashboard
+// This needs to be after API routes but before the catch-all route
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Serve the admin dashboard for any other route
 app.get('*', (req, res) => {
